@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -13,6 +22,7 @@ const Header = () => {
   };
 
   const navigationItems = [
+    { label: 'Home', id: 'hero' },
     { label: 'About', id: 'about' },
     { label: 'Skills', id: 'skills' },
     { label: 'Experience', id: 'experience' },
@@ -21,24 +31,10 @@ const Header = () => {
   ];
 
   return (
-    <header style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      backgroundColor: 'rgba(242, 242, 242, 0.95)',
-      backdropFilter: 'blur(10px)',
-      borderBottom: '1px solid var(--border-light)',
-      zIndex: 1000,
-      padding: '16px 0'
-    }}>
-      <div className="container" style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-      }}>
+    <header className={`nav-header ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="nav-container">
         <div 
-          className="header-logo"
+          className="nav-logo"
           style={{ cursor: 'pointer' }}
           onClick={() => scrollToSection('hero')}
         >
@@ -46,31 +42,39 @@ const Header = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav style={{ display: window.innerWidth <= 768 ? 'none' : 'flex', gap: '32px' }}>
-          {navigationItems.map((item) => (
-            <button
-              key={item.id}
-              className="nav-link"
-              onClick={() => scrollToSection(item.id)}
-              style={{
-                background: 'transparent',
-                border: 'none',
-                cursor: 'pointer'
-              }}
-            >
-              {item.label}
-            </button>
-          ))}
+        <nav style={{ display: window.innerWidth <= 768 ? 'none' : 'block' }}>
+          <ul className="nav-links">
+            {navigationItems.map((item) => (
+              <li key={item.id}>
+                <button
+                  className="nav-link"
+                  onClick={() => scrollToSection(item.id)}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer'
+                  }}
+                >
+                  {item.label}
+                </button>
+              </li>
+            ))}
+          </ul>
         </nav>
 
         {/* Mobile Menu Button */}
         <button
           style={{
-            display: window.innerWidth <= 768 ? 'block' : 'none',
-            background: 'transparent',
-            border: 'none',
+            display: window.innerWidth <= 768 ? 'flex' : 'none',
+            background: 'var(--bg-card)',
+            backdropFilter: 'var(--blur-md)',
+            border: '1px solid var(--border-glass)',
+            borderRadius: '8px',
+            padding: '8px',
             cursor: 'pointer',
-            padding: '8px'
+            color: 'var(--text-primary)',
+            alignItems: 'center',
+            justifyContent: 'center'
           }}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
@@ -82,12 +86,15 @@ const Header = () => {
           <div style={{
             position: 'absolute',
             top: '100%',
-            left: 0,
-            right: 0,
-            backgroundColor: 'var(--bg-white)',
-            border: '1px solid var(--border-light)',
-            borderTop: 'none',
-            padding: '24px'
+            left: '2rem',
+            right: '2rem',
+            background: 'var(--bg-card)',
+            backdropFilter: 'var(--blur-lg)',
+            border: '1px solid var(--border-glass)',
+            borderRadius: '16px',
+            padding: '1.5rem',
+            boxShadow: 'var(--shadow-glass)',
+            zIndex: 1000
           }}>
             {navigationItems.map((item) => (
               <button
@@ -101,7 +108,8 @@ const Header = () => {
                   display: 'block',
                   width: '100%',
                   textAlign: 'left',
-                  padding: '12px 0'
+                  padding: '12px 0',
+                  fontSize: '1rem'
                 }}
               >
                 {item.label}
