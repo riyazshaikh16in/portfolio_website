@@ -140,39 +140,50 @@ const Hero = () => {
                 opacity: 0.6
               }}></div>
               
-              <div className="label mb-4" style={{ zIndex: 2 }}>
-                Technical Excellence
-              </div>
-              
+              {/* Professional Photo */}
               <div style={{
-                width: '200px',
-                height: '200px',
-                background: 'var(--accent-gradient)',
+                width: '220px',
+                height: '220px',
                 borderRadius: '20px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                overflow: 'hidden',
                 marginBottom: '2rem',
                 position: 'relative',
                 zIndex: 2,
-                boxShadow: '0 20px 40px rgba(139, 92, 246, 0.3)'
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(20px)',
+                border: '2px solid rgba(139, 92, 246, 0.3)',
+                boxShadow: '0 20px 40px rgba(139, 92, 246, 0.2)'
               }}>
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_automation-expert-3/artifacts/et09lpdp_1656259899873.jpeg"
+                  alt="Technical Expert"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center'
+                  }}
+                />
+                
+                {/* Glassmorphism Overlay */}
                 <div style={{
-                  fontSize: '3rem',
-                  fontWeight: '700',
-                  color: 'white',
-                  textAlign: 'center'
-                }}>
-                  20+
-                </div>
+                  position: 'absolute',
+                  bottom: '0',
+                  left: '0',
+                  right: '0',
+                  height: '80px',
+                  background: 'linear-gradient(transparent, rgba(139, 92, 246, 0.3))',
+                  backdropFilter: 'blur(10px)'
+                }}></div>
               </div>
               
               <div className="text-body" style={{
                 textAlign: 'center',
                 maxWidth: '300px',
-                zIndex: 2
+                zIndex: 2,
+                fontWeight: '500'
               }}>
-                Years of Innovation in Automation Testing & Smart Meter Technologies
+                Leading Innovation in Smart Meter Technologies & Test Automation
               </div>
               
               {/* Floating Elements */}
