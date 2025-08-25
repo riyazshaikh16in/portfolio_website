@@ -227,29 +227,29 @@ const About = () => {
           </div>
         </div>
         
-        {/* Education & Certifications */}
+        {/* Education & Certifications - Compact */}
         <div className={`grid grid-3 animate-fade-in animate-delay-3 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-          <div className="glass-card">
-            <div className="label mb-3">
+          <div className="glass-card" style={{ padding: '1.5rem' }}>
+            <div className="label mb-2">
               Education
             </div>
-            <div className="text-body mb-3">
+            <div className="text-body mb-2" style={{ fontSize: '0.9rem' }}>
               <strong style={{ color: 'var(--text-primary)' }}>Bachelor's Degree</strong><br />
               Electronics & Communications<br />
-              <span style={{ color: 'var(--accent-secondary)' }}>Rajasthan Technical University</span>
+              <span style={{ color: 'var(--accent-secondary)', fontSize: '0.8rem' }}>Rajasthan Technical University</span>
             </div>
-            <div className="text-body">
+            <div className="text-body" style={{ fontSize: '0.9rem' }}>
               <strong style={{ color: 'var(--text-primary)' }}>Diploma</strong><br />
               Electronics & Telecommunications<br />
-              <span style={{ color: 'var(--accent-secondary)' }}>R.G.P.V. Bhopal</span>
+              <span style={{ color: 'var(--accent-secondary)', fontSize: '0.8rem' }}>R.G.P.V. Bhopal</span>
             </div>
           </div>
           
-          <div className="glass-card">
-            <div className="label mb-3">
+          <div className="glass-card" style={{ padding: '1.5rem' }}>
+            <div className="label mb-2">
               Certifications
             </div>
-            <div className="text-body" style={{ lineHeight: '2' }}>
+            <div className="text-body" style={{ lineHeight: '1.8', fontSize: '0.9rem' }}>
               • <strong>Executive PG</strong> in Cloud Computing & DevOps<br />
               • <strong>ISTQB Advanced</strong> - Test Analyst<br />
               • <strong>ISTQB Foundation</strong> Certification<br />
@@ -257,11 +257,11 @@ const About = () => {
             </div>
           </div>
           
-          <div className="glass-card">
-            <div className="label mb-3">
+          <div className="glass-card" style={{ padding: '1.5rem' }}>
+            <div className="label mb-2">
               Core Specializations
             </div>
-            <div className="text-body" style={{ lineHeight: '2' }}>
+            <div className="text-body" style={{ lineHeight: '1.8', fontSize: '0.9rem' }}>
               • <strong>Smart Meter Testing</strong> & Validation<br />
               • <strong>Python Automation</strong> (PyATS)<br />
               • <strong>EMI/EMC Compliance</strong> Testing<br />

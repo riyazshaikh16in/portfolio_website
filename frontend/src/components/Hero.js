@@ -115,7 +115,7 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Hero Visual */}
+          {/* Hero Visual with Clear Photo */}
           <div className={`animate-fade-in animate-delay-2 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <div className="glass-card" style={{
               height: '500px',
@@ -140,7 +140,7 @@ const Hero = () => {
                 opacity: 0.6
               }}></div>
               
-              {/* Professional Photo */}
+              {/* Professional Photo - Crystal Clear */}
               <div style={{
                 width: '220px',
                 height: '220px',
@@ -149,9 +149,7 @@ const Hero = () => {
                 marginBottom: '2rem',
                 position: 'relative',
                 zIndex: 2,
-                background: 'rgba(255, 255, 255, 0.1)',
-                backdropFilter: 'blur(20px)',
-                border: '2px solid rgba(139, 92, 246, 0.3)',
+                border: '3px solid rgba(139, 92, 246, 0.3)',
                 boxShadow: '0 20px 40px rgba(139, 92, 246, 0.2)'
               }}>
                 <img 
@@ -164,17 +162,6 @@ const Hero = () => {
                     objectPosition: 'center'
                   }}
                 />
-                
-                {/* Glassmorphism Overlay */}
-                <div style={{
-                  position: 'absolute',
-                  bottom: '0',
-                  left: '0',
-                  right: '0',
-                  height: '80px',
-                  background: 'linear-gradient(transparent, rgba(139, 92, 246, 0.3))',
-                  backdropFilter: 'blur(10px)'
-                }}></div>
               </div>
               
               <div className="text-body" style={{
