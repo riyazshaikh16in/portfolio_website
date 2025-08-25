@@ -1,34 +1,256 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* TWEN Design System - Professional Portfolio */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Foundation Colors */
+:root {
+  /* Monochromatic Base */
+  --color-background: #F2F2F2;
+  --bg-white: #FFFFFF;
+  --text-primary: #232323;
+  --text-secondary: rgba(35, 35, 35, 0.7);
+  --border-color: #232323;
+  --border-light: rgba(35, 35, 35, 0.1);
+  
+  /* Neon Green Accent System */
+  --accent-primary: #38FF62;
+  --accent-hover: #2AE052;
+  --accent-active: #1DC943;
+  --accent-foreground: #232323;
+  
+  /* Functional Colors */
+  --color-success: #38FF62;
+  --color-error: #FF3838;
+  --color-warning: #FFB838;
+  --color-disabled: rgba(35, 35, 35, 0.3);
+  
+  /* Grid System */
+  --grid-unit: 47.6px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  background-color: var(--color-background);
+  color: var(--text-primary);
+  line-height: 1.5;
 }
 
-.App-link {
-    color: #61dafb;
+/* Typography System */
+.hero-title { 
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; 
+  font-size: clamp(60px, 15vw, 280px); 
+  font-weight: 700; 
+  color: var(--text-primary); 
+  line-height: 1; 
+  text-transform: uppercase; 
+  letter-spacing: -0.02em;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.header-logo {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.title-big { 
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; 
+  font-size: clamp(40px, 8vw, 150px); 
+  font-weight: 700; 
+  color: var(--text-primary); 
+  line-height: 1; 
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.text-big { 
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; 
+  font-size: clamp(32px, 6vw, 84px); 
+  font-weight: 400; 
+  color: var(--text-primary); 
+  line-height: 1.07;
+}
+
+.text-regular { 
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; 
+  font-size: clamp(16px, 2.5vw, 30px); 
+  font-weight: 500; 
+  color: var(--text-primary); 
+  line-height: 1.2;
+}
+
+.text-body { 
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; 
+  font-size: clamp(14px, 1.8vw, 18px); 
+  font-weight: 400; 
+  color: var(--text-primary); 
+  line-height: 1.33;
+}
+
+.label { 
+  font-family: 'JetBrains Mono', ui-monospace, monospace; 
+  font-size: clamp(10px, 1.5vw, 18px); 
+  font-weight: 400; 
+  color: var(--text-primary); 
+  line-height: 1; 
+  text-transform: uppercase; 
+  letter-spacing: 0.05em;
+}
+
+.label-small { 
+  font-family: 'JetBrains Mono', ui-monospace, monospace; 
+  font-size: clamp(8px, 1.2vw, 12px); 
+  font-weight: 400; 
+  color: var(--text-primary); 
+  line-height: 1.25; 
+  text-transform: uppercase; 
+  letter-spacing: 0.05em;
+}
+
+/* Button System */
+.btn-primary {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+  padding: 12px 24px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.btn-primary:hover {
+  background: rgba(35, 35, 35, 0.05);
+}
+
+.btn-accent {
+  background: var(--accent-primary);
+  border: none;
+  border-radius: 0;
+  padding: 12px 24px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--accent-foreground);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.btn-accent:hover {
+  background: var(--accent-hover);
+  transform: scale(1.02);
+}
+
+/* Grid Background */
+.grid-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-background);
+  background-image: 
+    linear-gradient(to right, var(--text-primary) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--text-primary) 1px, transparent 1px);
+  background-size: 47.6px 47.6px;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Layout System */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.grid-container {
+  display: grid;
+  gap: var(--grid-unit);
+  padding: calc(var(--grid-unit) * 2);
+}
+
+/* Cards */
+.card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 0;
+  padding: 24px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(35, 35, 35, 0.1);
+}
+
+/* Navigation */
+.nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  transition: opacity 0.15s ease;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+  
+  .hero-title {
+    font-size: 60px;
+  }
+  
+  .title-big {
+    font-size: 44px;
+  }
+  
+  .header-logo {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
 }
