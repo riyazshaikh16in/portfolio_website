@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Award, Code, Users, Globe, Target, Lightbulb } from 'lucide-react';
+import { Award, Code, Users, Target, Lightbulb } from 'lucide-react';
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,6 +22,7 @@ const About = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Removed "Countries Served" as requested
   const highlights = [
     {
       icon: <Award size={28} />,
@@ -40,12 +41,6 @@ const About = () => {
       number: "15+",
       label: "Teams Led",
       description: "Multi-region team leadership"
-    },
-    {
-      icon: <Globe size={28} />,
-      number: "25+",
-      label: "Countries Served",
-      description: "International project delivery"
     }
   ];
 
@@ -173,8 +168,8 @@ const About = () => {
                 right: 0,
                 bottom: 0,
                 background: `
-                  radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.1) 0%, transparent 50%)
+                  radial-gradient(circle at 20% 20%, rgba(49, 130, 206, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(66, 153, 225, 0.1) 0%, transparent 50%)
                 `,
                 opacity: 0.6
               }}></div>
@@ -185,7 +180,7 @@ const About = () => {
               
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
                 gap: '2rem',
                 position: 'relative',
                 zIndex: 2
