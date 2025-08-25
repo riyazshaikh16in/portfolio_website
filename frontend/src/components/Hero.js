@@ -17,8 +17,7 @@ const Hero = () => {
 
   const stats = [
     { icon: <Award size={24} />, value: "20+", label: "Years Experience" },
-    { icon: <Code size={24} />, value: "50+", label: "Projects Delivered" },
-    { icon: <Zap size={24} />, value: "15+", label: "Countries Served" }
+    { icon: <Code size={24} />, value: "50+", label: "Projects Delivered" }
   ];
 
   return (
