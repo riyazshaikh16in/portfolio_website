@@ -162,7 +162,7 @@ const Hero = () => {
                     position: 'relative',
                     zIndex: 2
                   }}>
-                    {stat.icon}
+                    {getIcon(stat.icon)}
                   </div>
                   
                   <div style={{
