@@ -227,8 +227,8 @@ const Hero = () => {
               
               {/* Professional Photo - Crystal Clear */}
               <div style={{
-                width: '240px',
-                height: '240px',
+                width: 'clamp(200px, 30vw, 240px)',
+                height: 'clamp(200px, 30vw, 240px)',
                 borderRadius: '24px',
                 overflow: 'hidden',
                 marginBottom: '2rem',
@@ -241,7 +241,7 @@ const Hero = () => {
               className="photo-container"
               >
                 <img 
-                  src="https://customer-assets.emergentagent.com/job_automation-expert-3/artifacts/et09lpdp_1656259899873.jpeg"
+                  src={personalInfo.photo}
                   alt="Technical Expert"
                   style={{
                     width: '100%',
