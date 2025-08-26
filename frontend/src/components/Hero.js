@@ -105,24 +105,22 @@ const Hero = () => {
               fontWeight: '600'
             }}>
               <Sparkles size={16} style={{ marginRight: '0.5rem', display: 'inline' }} />
-              WELCOME TO EXCELLENCE
+              {personalInfo.welcomeLabel}
             </div>
             
             <h1 className="hero-title mb-4">
-              Automation
+              {personalInfo.title.split(' ')[0]}
               <br />
-              <span className="text-gradient">Specialist</span>
+              <span className="text-gradient">{personalInfo.title.split(' ')[1]}</span>
             </h1>
             
             <p className="text-body mb-4" style={{
-              fontSize: '1.3rem',
+              fontSize: 'clamp(1rem, 2.5vw, 1.3rem)',
               maxWidth: '650px',
               lineHeight: '1.8',
               fontWeight: '400'
             }}>
-              Two decades of expertise in Test Automation, Firmware Validation, 
-              and Smart Meter Technologies. <strong style={{ color: 'var(--accent-light)' }}>
-              Transforming complex challenges into innovative solutions</strong> across global markets.
+              {personalInfo.description}
             </p>
             
             {/* Enhanced Action Buttons */}
