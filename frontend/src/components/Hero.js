@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { ChevronDown, Code, Zap, Award, ArrowRight, Play, Sparkles } from 'lucide-react';
+import { ChevronDown, Code, Zap, Award, ArrowRight, Play, Sparkles, Users } from 'lucide-react';
+import { personalInfo, stats } from '../data/portfolioData';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,10 +27,15 @@ const Hero = () => {
     }
   };
 
-  const stats = [
-    { icon: <Award size={28} />, value: "20+", label: "Years Experience", description: "Industry Leadership" },
-    { icon: <Code size={28} />, value: "50+", label: "Projects Delivered", description: "Global Success" }
-  ];
+  const getIcon = (iconName) => {
+    const icons = {
+      Award: <Award size={28} />,
+      Code: <Code size={28} />,
+      Users: <Users size={28} />,
+      Zap: <Zap size={28} />
+    };
+    return icons[iconName] || <Award size={28} />;
+  };
 
   return (
     <section 
