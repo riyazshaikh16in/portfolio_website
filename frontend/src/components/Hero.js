@@ -84,8 +84,8 @@ const Hero = () => {
       <div className="container">
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))',
-          gap: '5rem',
+          gridTemplateColumns: window.innerWidth > 1024 ? '1fr 1fr' : '1fr',
+          gap: window.innerWidth > 768 ? '4rem' : '2rem',
           alignItems: 'center'
         }}>
           {/* Enhanced Hero Content */}
