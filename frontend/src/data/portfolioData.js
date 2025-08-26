@@ -61,7 +61,7 @@ export const achievements = [
     icon: "Award"
   },
   {
-    number: "50+",
+    number: "30+",
     label: "Projects Delivered", 
     description: "Successful global implementations",
     icon: "Code"
