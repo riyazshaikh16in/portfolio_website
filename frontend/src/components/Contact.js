@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Mail, Phone, MapPin, Linkedin, Send, Clock, CheckCircle, User, Building } from 'lucide-react';
+import { contactInfo as contactData, availability } from '../data/portfolioData';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,34 +51,35 @@ const Contact = () => {
     setIsSubmitting(false);
   };
 
+  // FIXED: Now using data from portfolioData.js
   const contactInfo = [
     {
       icon: <Mail size={24} />,
       label: "Email",
-      value: "expert@techvalidation.com",
-      link: "mailto:expert@techvalidation.com",
-      color: "rgba(139, 92, 246, 0.2)"
+      value: contactData.email,
+      link: `mailto:${contactData.email}`,
+      color: "rgba(49, 130, 206, 0.2)" // FIXED: Professional blue instead of purple
     },
     {
       icon: <Phone size={24} />,
       label: "Phone",
-      value: "+91 98765 43210",
-      link: "tel:+919876543210",
-      color: "rgba(167, 139, 250, 0.2)"
+      value: contactData.phone,
+      link: `tel:${contactData.phone.replace(/\s/g, '')}`,
+      color: "rgba(66, 153, 225, 0.2)" // FIXED: Professional blue instead of purple
     },
     {
       icon: <MapPin size={24} />,
       label: "Location",
-      value: "India • Available for Global Projects",
+      value: contactData.location,
       link: null,
-      color: "rgba(139, 92, 246, 0.2)"
+      color: "rgba(49, 130, 206, 0.2)" // FIXED: Professional blue instead of purple
     },
     {
       icon: <Linkedin size={24} />,
       label: "LinkedIn",
       value: "Connect on LinkedIn",
-      link: "https://linkedin.com/in/technical-expert",
-      color: "rgba(167, 139, 250, 0.2)"
+      link: contactData.linkedin,
+      color: "rgba(66, 153, 225, 0.2)" // FIXED: Professional blue instead of purple
     }
   ];
 
@@ -90,7 +92,7 @@ const Contact = () => {
     },
     {
       icon: <Building size={20} />,
-      title: "Project Leadership",
+      title: "Project Leadership", 
       description: "Leading complex validation projects across multiple regions and technologies",
       availability: "Available"
     },
