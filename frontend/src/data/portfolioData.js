@@ -13,12 +13,12 @@ export const personalInfo = {
 
 // 📞 CONTACT INFORMATION
 export const contactInfo = {
-  phone: "+91 98765 43210", // ✏️ EDIT: Your phone number
-  email: "expert@techvalidation.com", // ✏️ EDIT: Your email
-  linkedin: "https://linkedin.com/in/technical-expert", // ✏️ EDIT: Your LinkedIn
-  github: "https://github.com/technical-expert", // ✏️ EDIT: Your GitHub (optional)
-  location: "India • Available for Global Projects", // ✏️ EDIT: Your location
-  website: "www.yourwebsite.com" // ✏️ EDIT: Your website (optional)
+  phone: "+91 98289 64002", // ✏️ EDIT: Your phone number
+  email: "riyazshaikh16in@yahoo.co.in", // ✏️ EDIT: Your email
+  linkedin: "www.linkedin.com/in/riyazshaikh98", // ✏️ EDIT: Your LinkedIn
+  //github: "https://github.com/technical-expert", // ✏️ EDIT: Your GitHub (optional)
+  location: "Noida, India", // ✏️ EDIT: Your location
+  //website: "www.yourwebsite.com" // ✏️ EDIT: Your website (optional)
 };
 
 // 📊 HERO SECTION STATS
@@ -30,7 +30,7 @@ export const stats = [
     icon: "Award"
   },
   { 
-    value: "50+", 
+    value: "30+", 
     label: "Projects Delivered", 
     description: "Global Success",
     icon: "Code"
@@ -80,7 +80,7 @@ export const achievements = [
     icon: "Award"
   },
   {
-    number: "50+",
+    number: "30+",
     label: "Projects Delivered", 
     description: "Successful global implementations",
     icon: "Code"
@@ -99,7 +99,7 @@ export const education = [
     degree: "Bachelor's Degree", // ✏️ EDIT: Your degree
     field: "Electronics & Communications", // ✏️ EDIT: Your field
     institution: "Rajasthan Technical University", // ✏️ EDIT: Your university
-    year: "2004" // ✏️ EDIT: Graduation year
+    year: "2014" // ✏️ EDIT: Graduation year
   },
   {
     degree: "Diploma", // ✏️ EDIT: Your degree
